@@ -212,10 +212,6 @@
 							<div class="zf-clearBoth"></div>
 						</li><!---------Licence Ends Here---------->
 					</ul>
-
-
-
-
 				</div><!---------template Container Starts Here---------->
 				<ul>
 					<li class="zf-fmFooter"><button class="zf-submitColor">Submit</button>
@@ -328,6 +324,10 @@
 			utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
 		});
 	</script>
+	<script>
+        var parentEmail = window.parent.document.getElementById('swell-customer-identification').getAttribute('data-email');
+        document.getElementById('Email').value = parentEmail;
+    </script>
 </body>
 
 </html>
