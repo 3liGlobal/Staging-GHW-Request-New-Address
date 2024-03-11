@@ -326,15 +326,10 @@
 		});
 	</script>
 	<script>
-		window.addEventListener('message', function (event) {
-			debugger
 			// Check if the message is from an allowed origin
-			if (event.origin === '*') {
 				// Update the email field with the received data
 				var parentEmail = window.parent.document.getElementById('swell-customer-identification').getAttribute('data-email');
 				document.getElementById('Email').value = parentEmail;
-			}
-		});
 
 	</script>
 </body>
