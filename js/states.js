@@ -349,9 +349,7 @@ var States = {
 var countriesWithState = ["ARE", "ESP", "IRQ", "POL", "SDN", "USA"];
 
 var original_zf_MandArray = [
-  "Name_Last",
   "Email",
-  "SingleLine",
   "Address_AddressLine1",
   "Address_City",
   "Address_Region",
