@@ -505,7 +505,7 @@
 		window.addEventListener('message', function (event) {
 			var email = event.data;
 			document.getElementById('Email').value = email;
-			document.getElementById("Email").disabled = true;
+			document.getElementById("Email").readOnly = true;
 			let checkField = setInterval(function () {
 				if ($('#Email').val() !== '') {
 					$('#loader').hide();
