@@ -1213,7 +1213,7 @@ window.onload = function () {
     //zipcodeInput = document.getElementById("postalCode");
     countyInput = document.getElementById("county"),
     stateLabel = document.getElementById("stateLabel");
-  
+
   countySel.value = "USA";
   // Handle change event on country dropdown
   countySel.onchange = function () {
@@ -1255,7 +1255,7 @@ window.onload = function () {
 
       for (var state in countries_states[selectedCountryCode]) {
         stateDropdown.options[stateDropdown.options.length] = new Option(
-          countries_states[selectedCountryCode][state],state
+          countries_states[selectedCountryCode][state], state
         );
       }
     } else {
