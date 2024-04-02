@@ -375,7 +375,8 @@
 					</ul>
 				</div><!---------template Container Starts Here---------->
 				<ul>
-					<li class="zf-fmFooter"><button class="zf-submitColor">Submit</button>
+					<li class="zf-fmFooter">
+						<button type="submit" class="zf-submitColor" id="zf-submitColor">Submit</button>
 					</li>
 				</ul>
 
@@ -513,6 +514,12 @@
 				}
 			}, 100);
 			$('#loader').hide();
+		});
+	</script>
+
+	<script>
+		$('form').submit(function () {
+			$('#zf-submitColor').prop('disabled', true);
 		});
 	</script>
 </body>
