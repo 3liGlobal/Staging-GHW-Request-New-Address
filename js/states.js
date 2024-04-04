@@ -1310,10 +1310,7 @@ window.onload = function () {
     //     cityText.value = "";
     //     zipText.value = "";
     //     countyInput.value = "";
-
-    if (countySel.value == "USA") {
-      stateLabel.value = stateDropdown.selectedOptions[0].innerHTML;
-    }
+    stateLabel.value = stateDropdown.selectedOptions[0].innerHTML;
     //     // If a country is selected, proceed to update the city dropdown
     //     if (selectedCountry) {
     //       // Enable the city dropdown
