@@ -2869,9 +2869,10 @@ ul {
 }
 
 .dropdown-list {
-  position: absolute;
-  background: #f5f5f5;
-  width: 41%;
+  /* border: 1px solid #838282; */
+  position: relative;
+  background: #ffffff;
+  width: 100%;
   z-index: 1;
   border-radius: 5px;
   max-height: 300px;
@@ -2879,6 +2880,9 @@ ul {
 }
 
 .dropdown-item {
+  font-size: 14px;
+  font-weight: 500;
+  color: #838282;
   cursor: context-menu;
   padding: 4px 15px;
 }
