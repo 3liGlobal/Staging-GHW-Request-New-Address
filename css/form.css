@@ -2871,15 +2871,15 @@ ul {
 .dropdown-list {
   position: absolute;
   background: #f5f5f5;
-  width: 50%;
-  z-index: 10;
-  border-radius: 15px;
+  width: 41%;
+  z-index: 1;
+  border-radius: 5px;
   max-height: 300px;
   overflow-y: auto;
 }
 
 .dropdown-item {
-  cursor: pointer;
+  cursor: context-menu;
   padding: 4px 15px;
 }
 
@@ -2903,6 +2903,27 @@ ul {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  width: 3rem;
+  line-height: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.close-button {
+  height: .625rem;
+  font-size: 18px;
+  cursor: pointer;
 }
