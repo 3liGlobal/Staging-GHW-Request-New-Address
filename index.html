@@ -436,7 +436,7 @@
 				dropdownList.empty();
 			}
 		}
-		
+
 		function callback(e, thisObj) {
 			let id = thisObj.id;
 			const query = `https://api.addressy.com/Capture/Interactive/Find/v1.10/json3.ws?Key=TY78-BD75-NW81-XE97&Countries=US&Limit=20&Container=${id}`;
@@ -522,9 +522,25 @@
 
 	<script>
 		$('form').submit(function () {
-			$('#zf-submitColor').prop('disabled', true);
+			var submitButton = $('#zf-submitColor');
+			var submitHoverButton = $('#zf-submitColor:hover');
+
+			// Disable the button and change its color to grey
+			submitButton.css('cursor', 'not-allowed');
+			submitButton.html('Submitting...');
+			submitButton.css('background-color', '#d1d5db');
+			submitHoverButton.css('background-color', '#d1d5db');
+			submitButton.css('color', '#4b5563');
+			submitButton.prop('disabled', true);
+
+			// Re-enable the button and change its color back after 5 seconds
 			setTimeout(function () {
-				$('#zf-submitColor').prop('disabled', false);
+				submitButton.prop('disabled', false);
+				submitButton.css('cursor', 'pointer'); // Reset to default color
+				submitButton.html('Submit');
+				submitButton.css('background-color', 'black');
+				submitButton.css('color', 'white');
+
 			}, 5000);
 		});
 	</script>
@@ -537,7 +553,7 @@
 			closeButton.addEventListener("click", function () {
 				dropdownList.empty();
 			});
-			
+
 			dropdownList.append(closeButton);
 		}
 	</script>
