@@ -2869,12 +2869,11 @@ ul {
 }
 
 .dropdown-list {
-  /* border: 1px solid #838282; */
   position: relative;
-  background: #ffffff;
+  background: #f5f5f5;
   width: 100%;
-  z-index: 1;
-  border-radius: 5px;
+  z-index: 10;
+  border-radius: 15px;
   max-height: 300px;
   overflow-y: auto;
 }
