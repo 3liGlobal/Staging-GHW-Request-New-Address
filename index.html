@@ -63,7 +63,7 @@
 										checktype="c5" value="" placeholder="" id="Email" />
 									<div id="loader"></div>
 								</span>
-								<p id="Email_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+								<p id="Email_error" class="zf-errorMessage" style="display:none;">Please complete the required field.</p>
 							</div>
 							<div class="zf-clearBoth"></div>
 						</li><!---------Email Ends Here---------->
@@ -79,7 +79,7 @@
 									<option value="Staging">Staging</option>
 									<option value="Production">Production</option>
 								</select>
-								<p id="Dropdown_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+								<p id="Dropdown_error" class="zf-errorMessage" style="display:none;">Please complete the required field.</p>
 							</div>
 							<div class="zf-clearBoth"></div>
 						</li>-------Dropdown Ends Here-------- -->
@@ -96,7 +96,7 @@
 										id="international_PhoneNumber_countrycode" valType="number" phoneFormatType="1"
 										placeholder="" oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
 								</span>
-								<p id="PhoneNumber_error" class="zf-errorMessage" style="display:none;">Invalid value
+								<p id="PhoneNumber_error" class="zf-errorMessage" style="display:none;">Please complete the required field.
 								</p>
 							</div>
 							<div class="zf-clearBoth"></div>
@@ -324,7 +324,7 @@
 											<input type="text" maxlength="255" placeholder="" name="Address_ZipCode"
 												id="postalCode" class="Address_ZipCode zip-text" autocomplete="off" />
 											<p id="Address_ZipCode_error" class="zf-errorMessage" style="display:none;">
-												Invalid value</p>
+												Please complete the required field.</p>
 										</span>
 										<span class="zf-addOne">
 											<label>County
@@ -333,7 +333,7 @@
 											<input type="text" maxlength="255" name="SingleLine1" checktype="c1"
 												placeholder="" class="county" id="county" autocomplete="off" />
 											<p id="SingleLine1_error" class="zf-errorMessage" style="display:none;">
-												Invalid value</p>
+												Please complete the required field.</p>
 										</span>
 									</div>
 
@@ -346,7 +346,7 @@
 												checktype="c1" placeholder="" autocomplete="off" />
 											<p id="Address_AddressLine2_error" class="zf-errorMessage"
 												style="display:none;">
-												Invalid value</p>
+												Please complete the required field.</p>
 										</span>
 									</div>
 
@@ -527,7 +527,7 @@
 
 			// Disable the button and change its color to grey
 			submitButton.css('cursor', 'not-allowed');
-			submitButton.html('Submitting...');
+			// submitButton.html('Submitting...');
 			submitButton.css('background-color', '#d1d5db');
 			submitHoverButton.css('background-color', '#d1d5db');
 			submitButton.css('color', '#4b5563');
@@ -537,7 +537,7 @@
 			setTimeout(function () {
 				submitButton.prop('disabled', false);
 				submitButton.css('cursor', 'pointer'); // Reset to default color
-				submitButton.html('Submit');
+				// submitButton.html('Submit');
 				submitButton.css('background-color', 'black');
 				submitButton.css('color', 'white');
 
