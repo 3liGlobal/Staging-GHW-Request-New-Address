@@ -1194,7 +1194,8 @@ var original_zf_MandArray = [
   "Address_Region",
   "Address_ZipCode",
   "SingleLine1",
-  "Address_Country"
+  "Address_Country",
+  "Dropdown2",
 ];
 
 var zf_MandArray = original_zf_MandArray.slice();

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Submit&#x20;Address&#x20;-&#x20;Hookah&#x20;wholesaler</title>
+	<title>STA-Submit&#x20;Address&#x20;-&#x20;Hookah&#x20;wholesaler</title>
 	<link href="css/form.css" rel="stylesheet" type="text/css">
 	<script src="js/validation.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
@@ -101,6 +101,25 @@
 							</div>
 							<div class="zf-clearBoth"></div>
 						</li><!---------Phone Ends Here---------->
+												<!---------Dropdown Starts Here---------->
+												<li class="zf-tempFrmWrapper zf-small"><label class="zf-labelName">
+													Address Location
+													<em class="zf-important">*</em>
+												</label>
+												<div class="zf-tempContDiv">
+													<select class="zf-form-sBox" name="Dropdown2" checktype="c1">
+														<option selected="true" value="-Select-" disabled>Select</option>
+														<option value="Residential&#x20;Location">Residential Location</option>
+														<option value="Business&#x20;Location">Business Location</option>
+														<option value="Alternate&#x20;Business&#x20;Location">Alternate Business Location
+														</option>
+														<option value="Freight&#x20;Forwarder">Freight Forwarder</option>
+														<option value="Freight&#x20;Pickup&#x20;Center">Freight Pickup Center</option>
+													</select>
+													<p id="Dropdown2_error" class="zf-errorMessage" style="display:none;">Please select the required field</p>
+												</div>
+												<div class="zf-clearBoth"></div>
+											</li><!---------Dropdown Ends Here---------->
 
 						<!---------Address Starts Here---------->
 						<li class="zf-tempFrmWrapper zf-address zf-addrlarge ">
@@ -364,7 +383,7 @@
 							<label class="zf-labelName">Licence</label>
 							<div class="zf-tempContDiv">
 								<span class="zf-addOne">
-									<input type="file" maxlength="255" name="FileUpload" />
+									<input type="file" maxlength="255" name="FileUpload" accept=".pdf, .png, .jpg, .ppt, .tiff, .bmp, .svg, .doc, .docx, .xls, .xlsx, .odt, .zip"/>
 								</span>
 								<p id="FileUpload_error" class="zf-errorMessage" style="display:none;">Choose any file
 									for this field.</p>
@@ -384,7 +403,7 @@
 	</div><!-- 'zf-templateWidth' ends -->
 	<script type="text/javascript">var zf_DateRegex = new RegExp("^(([0][1-9])|([1-2][0-9])|([3][0-1]))[-](Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[-](?:(?:19|20)[0-9]{2})$");
 		// var zf_MandArray = ["Address_AddressLine1", "Address_City", "Address_Region", "Address_ZipCode", "Address_Country"];
-		var zf_FieldArray = ["Email", "Address_AddressLine1", "Address_City", "Address_Region", "Address_ZipCode", "Address_Country", "SingleLine1"]; // , "PhoneNumber_countrycode", "FileUpload"	
+		var zf_FieldArray = ["Email", "Address_AddressLine1", "Address_City", "Address_Region", "Address_ZipCode", "Address_Country", "SingleLine1", "Dropdown2"]; // , "PhoneNumber_countrycode", "FileUpload"	
 		var zf_MandArray = ["Address_AddressLine1", "Address_City", "Address_ZipCode", "Address_Country", "Address_Region"];
 		var isSalesIQIntegrationEnabled = false;
 		var salesIQFieldsArray = [];
