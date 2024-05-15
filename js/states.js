@@ -1176,16 +1176,7 @@ var countries_states = {
   }
 };
 
-var countriesWithState = [
-  'ALB', 'ARG', 'AUT', 'AUS', 'BEL',
-  'BGR', 'BOL', 'BRA', 'CAN', 'CHE',
-  'CHL', 'CHN', 'COL', 'DEU', 'DNK',
-  'ECU', 'EST', 'ESP', 'FIN', 'FRA',
-  'GRC', 'GUY', 'HRV', 'IND', 'ISL',
-  'ITA', 'LTU', 'LVA', 'MEX', 'PER',
-  'POL', 'PRT', 'PRY', 'ROU', 'SWE',
-  'SUR', 'USA', 'URY', 'VEN'
-];
+var countriesWithState = ["USA", "CAN"];
 
 var original_zf_MandArray = [
   "Email",
@@ -1224,6 +1215,7 @@ window.onload = function () {
     updateStateDropdown();
     // updateStateDropdown1();
     //updateArray();
+    removeRequired()
   };
 
   function updateStateDropdown() {
@@ -1446,7 +1438,30 @@ window.onload = function () {
   //   console.log(zf_MandArray);
   //   }, 100); // Adjust the delay as needed
   // }
+  function removeRequired() {
+    if (countySel.value == "USA" || countySel.value == "CAN") {
+      zf_MandArray = addIfNotExist("Address_Region");
+      document.getElementById("state_star").style.display ="inline-block";
+    } else {
+      zf_MandArray = removeIfExists("Address_Region");
+      document.getElementById("state_star").style.display ="none";
+    }
+  }
 
+  function addIfNotExist(value) {
+    if (original_zf_MandArray.indexOf(value) === -1) {
+      original_zf_MandArray.push(value);
+    }
+    return original_zf_MandArray;
+  }
+
+  function removeIfExists(value) {
+    var index = original_zf_MandArray.indexOf(value);
+    if (index !== -1) {
+      original_zf_MandArray.splice(index, 1);
+    }
+    return original_zf_MandArray;
+  }
   //   // Initial setup
   updateStateDropdown();
   //updateArray();

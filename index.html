@@ -283,7 +283,7 @@
 												<option value="UKR">Ukraine</option>
 												<option value="ARE">United Arab Emirates</option>
 												<option value="GBR">United Kingdom</option>
-												<option value="USA">United States</option>
+												<option value="USA">United States of America</option>
 												<option value="URY">Uruguay</option>
 												<option value="UZB">Uzbekistan</option>
 												<option value="VAT">Vatican City</option>
@@ -320,7 +320,7 @@
 
 										<span class="zf-flLeft zf-addtwo">
 											<label>State/Region/Province
-												<em class="zf-important star">*</em>
+												<em class="zf-important star" id="state_star">*</em>
 											</label>
 											<select class="state-dropdown" checktype="c1" placeholder="">
 												<option value="" selected="selected" disabled>Select State</option>
@@ -419,9 +419,8 @@
 		}
 		// Function to handle the search input
 		function searchDropdown() {
-
 			var country = $(".dropdown-countries").find(":selected").text();
-			var country_val = $(".zf-form-sBox").find(":selected").val();
+			var country_val = $(".dropdown-countries").find(":selected").val();
 			if (country_val == "USA") {
 				var city = $(".Address_City").val();
 				var zipCode = $(".Address_ZipCode").val();
@@ -435,7 +434,6 @@
 					fetchData(query, (data) => {
 						const filteredOptions = data.Items;
 						dropdownList.empty();
-						appendCloseButton();
 						filteredOptions.forEach((option) => {
 							if (option.Type === "Container" || option.Type === "Street" || option.Type === "Locality" || option.Type === "BuildingNumber") {
 								dropdownList.append(
@@ -462,7 +460,6 @@
 			fetchData(query, (data) => {
 				const filteredOptions = data.Items;
 				dropdownList.empty();
-				appendCloseButton();
 				dropdownList.css({ "max-height": "300px", "overflow-y": "auto" });
 
 				filteredOptions.forEach((option) => {
