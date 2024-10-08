@@ -769,7 +769,12 @@
           });
         });
       }
-
+      var input = document.querySelector("#international_PhoneNumber_countrycode");
+    input.addEventListener("input", function () {
+      if (!input.value.startsWith("+")) {
+        input.value = "+" + input.value.replace(/[^0-9]/g, '');
+      }
+    });
       function getAddressDetail(e, thisObj) {
         let id = thisObj.id;
         const query = `https://api.addressy.com/Capture/Interactive/Retrieve/v1.2/json3.ws?Key=TY78-BD75-NW81-XE97&Id=${id}`;
@@ -796,9 +801,34 @@
           hiddenInput: "full",
           utilsScript:
             "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js",
+            onlyCountries: [
+        "AX", "AS", "AD", "AI", "AR", "AM", "AW", "AT", "BS", "BH", "BD", "BB",
+        "BE", "BZ", "BM", "BO", "BA", "BR", "IO", "VG", "BG", "KH", "CA", "KY",
+        "CL", "CN", "CX", "CC", "CO", "CK", "CR", "HR", "CY", "CZ", "DK", "DM",
+        "DO", "EC", "SV", "EE", "FK", "FO", "FJ", "FI", "GE", "DE", "GI", "GR",
+        "GL", "GD", "GP", "GU", "GT", "GG", "HM", "HN", "HK", "HU", "IS", "IN",
+        "ID", "IQ", "IE", "IM", "IT", "JM", "JP", "JE", "JO", "KZ", "KI", "KW",
+        "KG", "LV", "LB", "LI", "LT", "LU", "MO", "MY", "MV", "MT", "MH", "MQ",
+        "YT", "MX", "FM", "MD", "MC", "MN", "ME", "MS", "NR", "NP", "NL", "NC",
+        "NI", "NU", "NF", "MK", "MP", "NO", "OM", "PW", "PA", "PG", "PY", "PE",
+        "PH", "PN", "PL", "PT", "QA", "SM", "SA", "RS", "SG", "SK", "SI", "SB",
+        "ZA", "GS", "KR", "ES", "LK", "BL", "SH", "KN", "LC", "MF", "PM", "VC",
+        "SJ", "SE", "CH", "TW", "TJ", "TH", "TO", "TT", "TR", "TC", "UM", "VI",
+        "UA", "AE", "GB", "US", "UY", "UZ", "VA", "VE", "VN", "WF", "EH"
+      ],
         }
       );
-
+    // Event listener for country change
+    document.querySelector("#international_PhoneNumber_countrycode").addEventListener("countrychange", function () {
+        var countySel = document.querySelector(".dropdown-countries");
+        var countryData = iti.getSelectedCountryData();
+        var countryName = countryData.name;
+        var iso2 = countryData.iso2.toUpperCase();
+        var iso3 = convert_ISO_3166_2_to_1[iso2] || "N/A";
+        countySel.value = iso3;
+        var event = new Event('change');
+        countySel.dispatchEvent(event);
+      });
       document.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
           event.preventDefault(); // Prevent form from being submitted through enter key
@@ -821,30 +851,14 @@
         $("#loader").hide();
       });
     </script>
-
-    <script>
-      $("form").submit(function () {
-        var submitButton = $("#zf-submitColor");
-        var submitHoverButton = $("#zf-submitColor:hover");
-
-        // Disable the button and change its color to grey
-        submitButton.css("cursor", "not-allowed");
-        // submitButton.html('Submitting...');
-        submitButton.css("background-color", "#d1d5db");
-        submitHoverButton.css("background-color", "#d1d5db");
-        submitButton.css("color", "#4b5563");
-        submitButton.prop("disabled", true);
-
-        // Re-enable the button and change its color back after 5 seconds
-        setTimeout(function () {
-          submitButton.prop("disabled", false);
-          submitButton.css("cursor", "pointer"); // Reset to default color
-          // submitButton.html('Submit');
-          submitButton.css("background-color", "black");
-          submitButton.css("color", "white");
-        }, 5000);
-      });
-    </script>
+  <script>
+    $("form").submit(function () {
+      $("#zf-submitColor").prop("disabled", true);
+      setTimeout(function () {
+        $("#zf-submitColor").prop("disabled", false);
+      }, 5000);
+    });
+  </script>
     <script>
       function appendCloseButton() {
         const closeButton = document.createElement("button");
