@@ -792,16 +792,13 @@
         });
       }
 
-      var iti = window.intlTelInput(
-        document.querySelector("#international_PhoneNumber_countrycode"),
-        {
-          separateDialCode: false,
-          preferredCountries: ["US"],
-          allowDropdown: true,
-          hiddenInput: "full",
-          utilsScript:
-            "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js",
-            onlyCountries: [
+      var iti = window.intlTelInput(input, {
+      separateDialCode: false,
+      preferredCountries: ["US"],
+      allowDropdown: true,
+      hiddenInput: "full",
+      utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js",
+      onlyCountries: [
         "AX", "AS", "AD", "AI", "AR", "AM", "AW", "AT", "BS", "BH", "BD", "BB",
         "BE", "BZ", "BM", "BO", "BA", "BR", "IO", "VG", "BG", "KH", "CA", "KY",
         "CL", "CN", "CX", "CC", "CO", "CK", "CR", "HR", "CY", "CZ", "DK", "DM",
@@ -816,8 +813,7 @@
         "SJ", "SE", "CH", "TW", "TJ", "TH", "TO", "TT", "TR", "TC", "UM", "VI",
         "UA", "AE", "GB", "US", "UY", "UZ", "VA", "VE", "VN", "WF", "EH"
       ],
-        }
-      );
+    });
     // Event listener for country change
     document.querySelector("#international_PhoneNumber_countrycode").addEventListener("countrychange", function () {
         var countySel = document.querySelector(".dropdown-countries");
